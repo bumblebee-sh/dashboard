@@ -1,1 +1,1 @@
-export * from './purchase.interface.ts';
+export * from './purchase.interface.ts'

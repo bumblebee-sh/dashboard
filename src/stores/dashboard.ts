@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia';
-import { type Purchase } from '@/interfaces';
+import { defineStore } from 'pinia'
+import { type Purchase } from '@/interfaces'
 
 export const useDashboardStore = defineStore('dashboard', {
   state: () => ({
@@ -7,10 +7,10 @@ export const useDashboardStore = defineStore('dashboard', {
   }),
   actions: {
     setPurchase(purchases: Purchase[]) {
-      this.purchase = purchases;
-    }
+      this.purchase = purchases
+    },
   },
   getters: {
     purchases: (state) => state.purchase,
-  }
-});
+  },
+})

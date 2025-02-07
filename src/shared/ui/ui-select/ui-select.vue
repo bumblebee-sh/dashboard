@@ -1,21 +1,13 @@
 <template>
   <div class="w-72">
-    <Listbox
-      :modelValue="selectedItem"
-      @update:modelValue="value => onUpdate(value)"
-    >
+    <Listbox :modelValue="selectedItem" @update:modelValue="(value) => onUpdate(value)">
       <div class="relative mt-1">
         <ListboxButton
           class="relative cursor-pointer w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
         >
           <span class="block truncate min-h-5">{{ selectedItem?.title || '' }}</span>
-          <span
-            class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
-          >
-            <ChevronUpDownIcon
-              class="h-5 w-5 text-gray-400"
-              aria-hidden="true"
-            />
+          <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+            <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
           </span>
         </ListboxButton>
 
@@ -40,13 +32,9 @@
                   'relative cursor-pointer select-none py-2 pl-10 pr-4',
                 ]"
               >
-                <span
-                  :class="[
-                    selected ? 'font-medium' : 'font-normal',
-                    'block truncate',
-                  ]"
-                >{{ item.title }}</span
-                >
+                <span :class="[selected ? 'font-medium' : 'font-normal', 'block truncate']">{{
+                  item.title
+                }}</span>
                 <span
                   v-if="selected"
                   class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
@@ -63,42 +51,35 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineEmits, onMounted } from 'vue';
-import {
-  Listbox,
-  ListboxButton,
-  ListboxOptions,
-  ListboxOption,
-} from '@headlessui/vue';
+import { ref, defineEmits, onMounted } from 'vue'
+import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from '@headlessui/vue'
 
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid';
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
 
 // todo Use generic for a v-model value
-const props = defineProps({
-  items: {
-    type: Array,
-    required: true,
-  },
-  modelValue: {}
-});
 
-const emit = defineEmits(['update:modelValue']);
 
-const selectedItem = ref();
-
-onMounted(() => {
-  if(props.modelValue) {
-    selectedItem.value = props.modelValue;
-  }
-});
-
-function onUpdate(value: unknown) {
-  selectedItem.value = value;
-  emit('update:modelValue', value);
+interface Props {
+  items: any[];
+  modelValue?: any;
 }
 
+const props = defineProps<Props>();
+
+const emit = defineEmits(['update:modelValue'])
+
+const selectedItem = ref()
+
+onMounted(() => {
+  if (props.modelValue) {
+    selectedItem.value = props.modelValue
+  }
+})
+
+function onUpdate(value: unknown) {
+  selectedItem.value = value
+  emit('update:modelValue', value)
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import NavigationPanel from '@/shared/components/navigation-panel/navigation-panel.vue';
-
+import NavigationPanel from '@/shared/components/navigation-panel/navigation-panel.vue'
 </script>
 
 <template>
- <div>
-   <NavigationPanel/>
- </div>
+  <div>
+    <NavigationPanel />
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

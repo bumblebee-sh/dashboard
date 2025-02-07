@@ -1,5 +1,5 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 
 export function getMonth(date: string): string {
-  return dayjs(date).format('MMM');
+  return dayjs(date).format('MMM')
 }

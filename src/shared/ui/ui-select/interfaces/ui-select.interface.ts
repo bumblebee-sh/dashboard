@@ -1,3 +1,1 @@
-export interface UiSelect {
-
-}
+export interface UiSelect {}

@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import DashboardPage from '@/pages/dashboard-page/dashboard-page.vue';
-import NotFoundPage from '@/pages/not-found-page/not-found-page.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import DashboardPage from '@/pages/dashboard-page/dashboard-page.vue'
+import NotFoundPage from '@/pages/not-found-page/not-found-page.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

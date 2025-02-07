@@ -6,7 +6,16 @@
 
 <script setup lang="ts">
 import { onMounted, useTemplateRef, watch } from 'vue'
-import {Chart, BarController, BarElement, LinearScale, CategoryScale, LineController, LineElement, PointElement} from 'chart.js';
+import {
+  Chart,
+  BarController,
+  BarElement,
+  LinearScale,
+  CategoryScale,
+  LineController,
+  LineElement,
+  PointElement,
+} from 'chart.js'
 
 const props = defineProps({
   config: {
@@ -15,48 +24,52 @@ const props = defineProps({
   },
   height: {
     type: Number,
-    default: 300
-  }
-});
+    default: 300,
+  },
+})
 
-let chart: Chart;
-const chartRef: any = useTemplateRef('chartElem')!;
-
+let chart: Chart
+const chartRef: any = useTemplateRef('chartElem')!
 
 onMounted(() => {
   // register plugins
   Chart.register(
     // scales
-    LinearScale, CategoryScale,
+    LinearScale,
+    CategoryScale,
     // line chart
-    LineController, LineElement,
+    LineController,
+    LineElement,
     // bar chart
-    BarController, BarElement, PointElement
-  );
+    BarController,
+    BarElement,
+    PointElement,
+  )
 
-  const config = setConfig<any>(props.config);
+  const config = setConfig<any>(props.config)
 
   // set chart
-  chart = new Chart(chartRef.value, config);
-});
+  chart = new Chart(chartRef.value, config)
+})
 
 function setConfig<T>(config: T): T {
   // copy
-  const configObj = JSON.parse(JSON.stringify(config));
+  const configObj = JSON.parse(JSON.stringify(config))
 
   // set responsive by default
-  configObj.options.responsive = true;
-  configObj.options.maintainAspectRatio = false;
+  configObj.options.responsive = true
+  configObj.options.maintainAspectRatio = false
 
-  return configObj;
+  return configObj
 }
 
-watch(() => props.config, (value) => {
-  chart.data.datasets = value.data.datasets;
-  chart.update();
-});
+watch(
+  () => props.config,
+  (value) => {
+    chart.data.datasets = value.data.datasets
+    chart.update()
+  },
+)
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
