@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: 'https://bumblebee-sh.github.io/dashboard/',
+  base: '/',
   plugins: [
     vue(),
     vueDevTools(),
