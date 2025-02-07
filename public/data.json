@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Product 1",
+    "purchase_date": "Thu, 01 Feb 2025 10:00:00 GMT",
+    "price": "10",
+    "region": "Asia"
+  },
+  {
+    "title": "Product 2",
+    "purchase_date": "Thu, 04 Feb 2025 10:00:00 GMT",
+    "price": "30",
+    "region": "Asia"
+  },
+  {
+    "title": "Product 3",
+    "purchase_date": "Thu, 03 Jan 2025 10:00:00 GMT",
+    "price": "25",
+    "region": "Europe"
+  },
+  {
+    "title": "Product 4",
+    "purchase_date": "Thu, 01 Jan 2025 10:00:00 GMT",
+    "price": "12",
+    "region": "Europe"
+  },
+  {
+    "title": "Product 5",
+    "purchase_date": "Thu, 20 Jan 2025 10:00:00 GMT",
+    "price": "100",
+    "region": "Europe"
+  },
+  {
+    "title": "Product 5",
+    "purchase_date": "Thu, 21 Jan 2025 10:00:00 GMT",
+    "price": "100",
+    "region": "North America"
+  }
+]
